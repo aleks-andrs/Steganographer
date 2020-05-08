@@ -1,0 +1,11 @@
+  <!-- Navigation Bar -->
+  <div class="w3-bar w3-grey w3-wide" style="font-size:18px">
+    <a href="/home" class="w3-bar-item w3-button">Home</a>
+    <a href="/encryption" class="w3-bar-item w3-button">Encrypt</a>
+    <a href="/decryption" class="w3-bar-item w3-button">Decrypt</a>
+    <a *ngIf="apiService.loggedIn()" href="/savedPasswords" class="w3-bar-item w3-button">Password Manager</a>
+    <a href="/selection" class="w3-bar-item w3-button">Select image</a>
+    <a href="/login" class="w3-bar-item w3-button">Login</a>
+    <a href="#" (click)="onLogoutClick()" class="w3-bar-item w3-button">Logout</a>
+    <a href="/register" class="w3-bar-item w3-button">Register</a>
+  </div>
