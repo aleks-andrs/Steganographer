@@ -1,1 +1,39 @@
-<p>encryption works!</p>
+<!-- Encrypt frame -->
+<div class="w3-panel w3-text-light-grey" id="encryptImg">
+	<div class="w3-display-container w3-padding-16 w3-center">
+		<h2>Encrypt text</h2>
+	</div>
+	<!-- Left side -->
+	<div class="w3-row-padding">
+		<div class="w3-third w3-padding">
+			<div class="w3-padding w3-half">
+				<input type="file" id="fileUpload" name="file" style="display: none" accept="image/*">
+				<button class="w3-button w3-gray w3-ripple w3-round-xxlarge w3-cell-row" ng-click="uploadFile()">Browse...</button>
+			</div>
+			<div class="w3-padding-16 w3-half">
+				<label>upload or select image</label>
+			</div>
+			<div class="w3-padding">
+				<img class="w3-image" id="displayImg" src="content/pictures/placeholder.jpg" alt="Placeholder">
+			</div>
+			<div class="w3-padding">
+				<img class="w3-image" src="content/pictures/placeholder.jpg" alt="Placeholder">
+			</div>
+		</div>
+		<!-- Right side -->
+		<div class="w3-rest w3-padding">
+			<div class="w3-padding">
+				<textarea class="w3-input w3-border w3-round" #textToEncrypt placeholder="Text to encrypt" rows="8" textToEncrypt=""></textarea>
+			</div>
+			<div class="w3-third w3-padding">
+				<input class="w3-input w3-border w3-round" type="password" placeholder="Encryption key">
+			</div>
+			<div class="w3-third w3-padding">
+				<button class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickEncrypt(textToEncrypt.value)">Encrypt</button>
+			</div>
+			<div class="w3-third w3-padding">
+				<button class="w3-button w3-yellow w3-ripple w3-round-xxlarge w3-cell-row">Download</button>
+			</div>
+		</div>
+	</div>
+</div>

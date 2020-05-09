@@ -1,11 +1,34 @@
   <!-- Navigation Bar -->
-  <div class="w3-bar w3-grey w3-wide" style="font-size:18px">
-    <a href="/home" class="w3-bar-item w3-button">Home</a>
-    <a href="/encryption" class="w3-bar-item w3-button">Encrypt</a>
-    <a href="/decryption" class="w3-bar-item w3-button">Decrypt</a>
-    <a *ngIf="apiService.loggedIn()" href="/savedPasswords" class="w3-bar-item w3-button">Password Manager</a>
-    <a href="/selection" class="w3-bar-item w3-button">Select image</a>
-    <a href="/login" class="w3-bar-item w3-button">Login</a>
-    <a href="#" (click)="onLogoutClick()" class="w3-bar-item w3-button">Logout</a>
-    <a href="/register" class="w3-bar-item w3-button">Register</a>
-  </div>
+  <nav class="navbar navbar-expand-lg navbar-light bd-navbar">
+    <a class="navbar-brand" href="/home">Steganographer</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto pt-1">
+        <li class="nav-item">
+          <a class="nav-link" href="/encryption">Encrypt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/decryption">Decrypt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/selection">Image selection</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="apiService.loggedIn()" class="nav-link" href="/passwordManager">Password manager</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav my-2 my-lg-0 pt-1">
+        <li class="nav-item">
+          <a *ngIf="!apiService.loggedIn()" class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!apiService.loggedIn()" class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="apiService.loggedIn()" (click)="onLogoutClick()" class="nav-link" href="/register">Logout</a>
+        </li>
+      </ul>
+    </div>
+</nav>

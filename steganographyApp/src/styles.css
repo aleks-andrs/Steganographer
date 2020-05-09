@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+body,h2 {
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background-color: #181818;
+  font-size: 18px;
+  color: white
+}
+
+.w3-image {
+  outline-style: outset;
+  outline-color: silver
+}
+
+.w3-row-padding img {
+  margin-bottom: 20px;
+  outline-style: outset;
+  outline-color: silver
+}
+
+.bd-navbar {
+  background-color: #b5b5b5;
+  border-bottom: 3px solid #080808;
+  min-height: 77px;
+}
+
+.bd-navbar .navbar-brand {
+  font-family: "Quicksand-SemiBold", sans-serif;
+  font-size: 21px;
+}
+
+.bd-navbar .navbar-collapse .navbar-nav > li > a {
+    color: #000000;
+}
+
+.bd-navbar .navbar-collapse .navbar-nav > li > a:hover,
+.bd-navbar .navbar-collapse .navbar-nav > li > a:focus {
+    color: ##676767;
+}

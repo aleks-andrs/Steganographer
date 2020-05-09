@@ -35,17 +35,17 @@ export class RegisterComponent implements OnInit {
 
     //Required Fields
     if(!this.validateService.validateRegister(user)){
-      this.flashMessages.show('Fill in all fields', {cssClass: 'alert-danger', timeout:9000});
+      this.flashMessages.show('Fill in all fields', {cssClass: 'alert-danger', timeout:3000});
       return false;
     }
 
     //Register user
     this.apiService.registerUser(user).subscribe(data => {
       if(data.success){
-        this.flashMessages.show('User registered', {cssClass: 'alert-success', timeout:9000});
+        this.flashMessages.show('User registered', {cssClass: 'alert-success', timeout:3000});
         this.router.navigate(['/login']);
       } else {
-        this.flashMessages.show('User not registered', {cssClass: 'alert-danger', timeout:9000});
+        this.flashMessages.show('User not registered', {cssClass: 'alert-danger', timeout:3000});
         this.router.navigate(['/register']);
       }
     });

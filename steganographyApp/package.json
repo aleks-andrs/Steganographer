@@ -22,6 +22,7 @@
     "@auth0/angular-jwt": "^4.0.0",
     "angular2-flash-messages": "^3.0.1",
     "bootstrap": "^4.4.1",
+    "jquery": "^3.5.1",
     "rxjs": "^6.5.5",
     "tslib": "^1.10.0",
     "w3-css": "^4.1.0",

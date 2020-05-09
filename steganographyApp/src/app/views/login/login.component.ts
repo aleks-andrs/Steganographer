@@ -33,11 +33,10 @@ export class LoginComponent implements OnInit {
     this.apiService.authenticateUser(user).subscribe(data => {
       if(data.success){
         this.apiService.storeUserData(data.token, data.user);
-        this.flashMessages.show("You are now logged in", {cssClass: 'alert-success', timeout:9000});
-        this.router.navigate(['login']);
+        this.router.navigate(['/home']);
       } else {
-        this.flashMessages.show(data.msg, {cssClass: 'alert-danger', timeout:9000});
-        this.router.navigate(['login']);
+        this.flashMessages.show(data.msg, {cssClass: 'alert-danger', timeout:3000});
+        this.router.navigate(['/login']);
       }
     });
   }

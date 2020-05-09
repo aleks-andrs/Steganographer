@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'encryption', component: EncryptionComponent },
   { path: 'decryption', component: DecryptionComponent },
-  { path: 'savedPasswords', component: PasswordmanagerComponent, canActivate:[AuthGuard]},
+  { path: 'passwordManager', component: PasswordmanagerComponent, canActivate:[AuthGuard]},
   { path: 'selection', component: SelectionComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
