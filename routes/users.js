@@ -64,4 +64,22 @@ router.get('/details', passport.authenticate('jwt', {session: false}), (req, res
   res.json({user: req.user});
 });
 
+
+//Update user info
+router.put('/update', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+  User.getUserByUsername(req.user.username, (err, user) => {
+    if(err) throw err;
+    if(!user){
+      return res.json({success: false, msg: 'User is not found'});
+    }
+    if (req.body.info) user.info = req.body.info;
+    // save the user
+    user.save(function(err) {
+      if (err) return res.send(err);
+      // return a message
+      res.json({ message: 'User updated!' });
+    });
+  });
+});
+
 module.exports = router;
