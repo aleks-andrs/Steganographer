@@ -17,12 +17,20 @@ export class ApiService {
   ) { }
 
   registerUser(user): Observable<any> {
-    let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
     return this.http.post<any>('http://127.0.0.1:3000/users/register', user, httpOptions);
   }
 
   authenticateUser(user): Observable<any> {
-    let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
     return this.http.post<any>('http://127.0.0.1:3000/users/authenticate', user, httpOptions);
   }
 
@@ -39,7 +47,7 @@ export class ApiService {
     localStorage.clear();
   }
 
-  getSavedPasswords(): Observable<any> {
+  getSavedDetails(): Observable<any> {
     this.loadToken();
     let httpOptions = {
       headers: new HttpHeaders({
@@ -61,6 +69,4 @@ export class ApiService {
      return false;
    return !helperService.isTokenExpired(localStorage.id_token);
   }
-
-
 }

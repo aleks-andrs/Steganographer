@@ -8,31 +8,32 @@
 		<div class="w3-third w3-padding">
 			<div class="w3-padding w3-half">
 				<input type="file" id="fileUpload" name="file" style="display: none" accept="image/*">
-				<button class="w3-button w3-gray w3-ripple w3-round-xxlarge w3-cell-row" ng-click="uploadFile()">Browse...</button>
+				<button class="w3-button w3-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickBrowse()">Browse...</button>
 			</div>
 			<div class="w3-padding-16 w3-half">
 				<label>upload or select image</label>
 			</div>
 			<div class="w3-padding">
-				<img class="w3-image" id="displayImg" src="content/pictures/placeholder.jpg" alt="Placeholder">
+				<img class="w3-image" src="assets/images/placeholder.jpg" alt="Placeholder" id="selectedImage">
 			</div>
 			<div class="w3-padding">
-				<img class="w3-image" src="content/pictures/placeholder.jpg" alt="Placeholder">
+				<img class="w3-image" src="assets/images/placeholder.jpg" alt="Placeholder" id="resultImage" *ngIf="imageVisible">
 			</div>
 		</div>
 		<!-- Right side -->
 		<div class="w3-rest w3-padding">
 			<div class="w3-padding">
-				<textarea class="w3-input w3-border w3-round" #textToEncrypt placeholder="Text to encrypt" rows="8" textToEncrypt=""></textarea>
+				<textarea class="w3-input w3-border w3-round" placeholder="Text to encrypt" rows="8" [(ngModel)]="textToEncrypt" name="textToEncrypt"></textarea>
 			</div>
 			<div class="w3-third w3-padding">
-				<input class="w3-input w3-border w3-round" type="password" placeholder="Encryption key">
+				<input class="w3-input w3-border w3-round" type="password" placeholder="Encryption key" [(ngModel)]="encryptionPassword" name="encryptionPassword">
 			</div>
 			<div class="w3-third w3-padding">
-				<button class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickEncrypt(textToEncrypt.value)">Encrypt</button>
+				<button class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickEncrypt()">Encrypt</button>
 			</div>
 			<div class="w3-third w3-padding">
-				<button class="w3-button w3-yellow w3-ripple w3-round-xxlarge w3-cell-row">Download</button>
+				<button *ngIf="apiService.loggedIn()" class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row">Save Key</button>
+				<button *ngIf="!apiService.loggedIn()" class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row" [disabled]="true">Save Key</button>
 			</div>
 		</div>
 	</div>

@@ -7,28 +7,30 @@
 	<div class="w3-row-padding">
 		<div class="w3-third w3-padding">
 			<div class="w3-padding w3-half">
-				<button class="w3-button w3-gray w3-ripple w3-round-xxlarge w3-cell-row" type="file" name="uploadedImage">Browse...</button>
+				<input type="file" id="fileUpload" name="file" style="display: none" accept="image/*">
+				<button class="w3-button w3-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickBrowse()">Browse...</button>
 			</div>
 			<div class="w3-padding-16 w3-half">
 				<label>upload image</label>
 			</div>
 			<div class="w3-padding">
-				<img class="w3-image" src="content/pictures/placeholder.jpg" alt="Placeholder">
-			</div>
-			<div class="w3-padding">
-				<img class="w3-image" src="content/pictures/placeholder.jpg" alt="Placeholder">
+				<img class="w3-image" src="assets/images/placeholder.jpg" alt="Placeholder" id="selectedImage">
 			</div>
 		</div>
 		<!-- Right side -->
 		<div class="w3-rest w3-padding">
 			<div class="w3-third w3-padding">
-				<input class="w3-input w3-border w3-round" type="password" placeholder="Decryption key">
+				<input class="w3-input w3-border w3-round" type="password" placeholder="Decryption key" [(ngModel)]="decryptionKey" name="decryptionKey">
+			</div>
+			<div class="w3-third w3-padding">
+				<button *ngIf="apiService.loggedIn()" class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row">Select Key</button>
+				<button *ngIf="!apiService.loggedIn()" class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row" [disabled]="true">Select Key</button>
 			</div>
 			<div class="w3-third w3-padding">
 				<button class="w3-button w3-green w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickDecrypt()">Decrypt</button>
 			</div>
 			<div class="w3-padding">
-				<textarea class="w3-input w3-border w3-round" placeholder="Decrypted text" rows="8"></textarea>
+				<textarea class="w3-input w3-border w3-round" placeholder="Decrypted text" rows="8" [(ngModel)]="decryptedText" name="decryptedText"></textarea>
 			</div>
 		</div>
 	</div>

@@ -16,7 +16,7 @@ export class PasswordmanagerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.apiService.getSavedPasswords().subscribe( res => {
+    this.apiService.getSavedDetails().subscribe( res => {
       let data = {} as any;
       data = res
       this.user = data.user;
