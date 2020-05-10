@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PasswordmanagerComponent implements OnInit {
   user: any;
+  keyList: [any];
 
   constructor(
     private apiService: ApiService,
@@ -20,11 +21,18 @@ export class PasswordmanagerComponent implements OnInit {
       let data = {} as any;
       data = res
       this.user = data.user;
+      this.keyList = this.user.info;
     },
     err => {
       console.log(err);
       return false;
     });
+  }
+
+  //delete selected key from the list
+  onClickDelete(selectedKey){
+    alert(selectedKey);
+
   }
 
 }

@@ -3,6 +3,7 @@ import { StrEncryptionService } from "./../../services/str.encryption.service";
 import { ValidateService } from './../../services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { ApiService } from './../../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-decryption',
@@ -18,13 +19,22 @@ export class DecryptionComponent implements OnInit {
     private strEncryptionService: StrEncryptionService,
     private validateService: ValidateService,
     public apiService: ApiService,
-    private flashMessages: FlashMessagesService
+    private flashMessages: FlashMessagesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.imageVisible = false;
   }
 
+
+  //select decryption key
+  onClickSelectKey(){
+    this.router.navigate(['/passwordManager']);
+  }
+
+
+  //decrypt button
   onClickDecrypt() {
     this.imageVisible = true;
     //get user input

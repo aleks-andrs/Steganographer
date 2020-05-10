@@ -4,6 +4,10 @@
   min-height: 77px;
 }
 
+.bd-navbar{
+  font-size: 18px;
+}
+
 .bd-navbar .navbar-brand {
   font-family: "Quicksand-SemiBold", sans-serif;
   font-size: 21px;

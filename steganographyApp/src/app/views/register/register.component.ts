@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       name: this.name,
       username: this.username,
       password: this.password,
-      info: "[]"
+      info: []
     }
 
     //Validate that fields are entered
@@ -42,10 +42,10 @@ export class RegisterComponent implements OnInit {
     //Register user
     this.apiService.registerUser(user).subscribe(data => {
       if(data.success){
-        this.flashMessages.show('User registered', {cssClass: 'alert-success', timeout:3000});
+        this.flashMessages.show('New user registered', {cssClass: 'alert-success', timeout:3000});
         this.router.navigate(['/login']);
       } else {
-        this.flashMessages.show('User not registered', {cssClass: 'alert-danger', timeout:3000});
+        this.flashMessages.show(data.msg, {cssClass: 'alert-danger', timeout:3000});
         this.router.navigate(['/register']);
       }
     });

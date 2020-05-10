@@ -1,11 +1,23 @@
 <!-- Login frame -->
-<div class="w3-display-container w3-padding-16 w3-center">
-  <h2>Login</h2>
-</div>
-<div class="w3-padding">
-  <form (submit)="onLogin()">
-    <input class="w3-input w3-border w3-round" type="text" placeholder="Username" [(ngModel)]="username" name="username">
-    <input class="w3-input w3-border w3-round" type="password" placeholder="Password" [(ngModel)]="password" name="password">
-    <button class="w3-button w3-ripple w3-round-xxlarge w3-cell-row" type="submit">Login</button>
-  </form>
+<div class="w3-display-container">
+  <div class="w3-padding-16 w3-center">
+    <h2>Login</h2>
+  </div>
+  <div class="w3-container">
+    <form (submit)="onLogin()">
+      <div class="w3-panel w3-border w3-round-xlarge">
+        <div class="w3-panel">
+          <p>Username:</p>
+          <input class="w3-input w3-border w3-round" type="text" placeholder="Username" [(ngModel)]="username" name="username">
+        </div>
+        <div class="w3-panel">
+          <p>Password:</p>
+          <input class="w3-input w3-border w3-round" type="password" placeholder="Password" [(ngModel)]="password" name="password">
+        </div>
+      </div>
+      <div class="w3-padding-16 w3-center">
+        <button class="w3-button w3-light-gray w3-ripple w3-round-xxlarge" type="submit">Login</button>
+      </div>
+    </form>
+  </div>
 </div>
