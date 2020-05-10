@@ -28,7 +28,7 @@ export class DecryptionComponent implements OnInit {
   }
 
 
-  //select decryption key
+  //select decryption key from password manager
   onClickSelectKey(){
     this.router.navigate(['/passwordManager']);
   }
@@ -71,7 +71,9 @@ export class DecryptionComponent implements OnInit {
     var file =  event.target.files[0];
     //check the uploaded file type
     if(file.type.indexOf("image") !== -1){
-      //this.previewImage(file);
+      //set image name
+      document.getElementById('lblUpload').innerHTML = file.name;
+      //read image
       var reader = new FileReader();
       var image = new Image;
       reader.readAsDataURL(file);

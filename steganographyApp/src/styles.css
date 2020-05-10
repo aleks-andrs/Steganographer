@@ -21,4 +21,6 @@ body {
 
 .w3-button {
   font-family: "Quicksand-SemiBold", sans-serif;
+  border-style: solid;
+  border-color: gray;
 }

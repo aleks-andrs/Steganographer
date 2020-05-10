@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 const config = require('./config/db');
 const passport = require('passport');
 
+//Restrict repeating indexes
+mongoose.set('useCreateIndex', true);
+
 //Connect database
 mongoose.connect(
   config.db, {

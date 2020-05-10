@@ -13,6 +13,8 @@ export class EncryptionComponent implements OnInit {
   textToEncrypt: string;
   encryptionPassword: string;
   imageVisible: boolean;
+  user: any;
+  keyList: [any];
 
   constructor(
     private strEncryptionService: StrEncryptionService,
@@ -23,6 +25,47 @@ export class EncryptionComponent implements OnInit {
 
   ngOnInit() {
     this.imageVisible = false;
+    //get the list of all keys associated with user
+    this.apiService.getSavedDetails().subscribe( res => {
+      let data = {} as any;
+      data = res;
+      this.user = data.user;
+      this.keyList = this.user.info;
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
+  }
+
+  onClickSaveKey(){
+    encryptionPassword: this.encryptionPassword;
+    //Validate encryption key field
+    if(!this.validateService.validateEntry(this.encryptionPassword)){
+      this.flashMessages.show('Encryption key missing', {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+    if(!this.validateService.validateEntryLength(this.encryptionPassword)){
+      this.flashMessages.show('Encryption key must be 4 to 12 symbols long', {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+    //insert key in the list
+    this.keyList.push(this.encryptionPassword);
+    //save in the appropriate format
+    var newData = {
+      info: this.keyList
+    }
+    this.apiService.updateUserInfo(newData).subscribe( res => {
+      if(res.success){
+        this.flashMessages.show(res.msg, {cssClass: 'alert-success', timeout:3000});
+      } else{
+        this.flashMessages.show(res.msg, {cssClass: 'alert-danger', timeout:3000});
+      }
+    },
+    err => {
+      console.log(err);
+      return false;
+    });
   }
 
   onClickEncrypt() {
@@ -64,7 +107,9 @@ export class EncryptionComponent implements OnInit {
     var file =  event.target.files[0];
     //check the uploaded file type
     if(file.type.indexOf("image") !== -1){
-      //this.previewImage(file);
+      //set image name
+      document.getElementById('lblUpload').innerHTML = file.name;
+      //read image
       var reader = new FileReader();
       var image = new Image;
       reader.readAsDataURL(file);
@@ -76,7 +121,7 @@ export class EncryptionComponent implements OnInit {
         }
       }
     } else {
-      alert("File: " + file.name + " is not an image type");
+      alert("File " + file.name + " is not an image type");
     }
   }
 }

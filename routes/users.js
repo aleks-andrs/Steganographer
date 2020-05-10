@@ -73,11 +73,13 @@ router.put('/update', passport.authenticate('jwt', {session: false}), (req, res,
       return res.json({success: false, msg: 'User is not found'});
     }
     if (req.body.info) user.info = req.body.info;
-    // save the user
+    //Save the user
     user.save(function(err) {
-      if (err) return res.send(err);
-      // return a message
-      res.json({ message: 'User updated!' });
+      if (err){
+        return res.json({success: false, msg: 'Unable to update'});
+      }
+      //Return a message
+      res.json({success: true, msg: 'List of Keys updated' });
     });
   });
 });

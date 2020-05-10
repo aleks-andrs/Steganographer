@@ -3,6 +3,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt;
 const User = require('../models/user');
 const config = require('../config/db');
 
+//JSON Web Token authentication
 module.exports = function(passport){
   let options = {};
   options.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme("jwt");
