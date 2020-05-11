@@ -3,8 +3,13 @@
 	<div class="w3-padding-16 w3-center">
 		<h2>Encrypt text</h2>
 	</div>
-	<!-- Left side -->
 	<div class="w3-row-padding">
+		<div class="w3-panel w3-padding  w3-border w3-round-xlarge">
+			<p>To encode a text into an image, please enter the text, select the image and provide an encryption key.
+				The encryption key can be saved in the Password Manager for later use. NOTE: Avoid using large files as
+				image encoding can be a computationally heavy process!</p>
+		</div>
+		<!-- Left side -->
 		<div class="w3-third w3-padding">
 			<div class="w3-padding w3-half">
 				<input type="file" id="fileUpload" name="file" style="display: none" accept="image/*">
@@ -16,7 +21,8 @@
 			<div class="w3-padding">
 				<img class="w3-image" src="assets/images/placeholder.jpg" alt="Placeholder" id="selectedImage">
 			</div>
-			<div class="w3-padding">
+			<div class="w3-padding" [hidden]="!isVisible">
+				<p>Right-click to Save this image:</p>
 				<img class="w3-image" src="assets/images/placeholder.jpg" alt="Placeholder" id="resultImage">
 			</div>
 		</div>

@@ -29,6 +29,28 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
+    //validate that all fields are entered
+    if(!this.validateService.validateLogin(user)){
+      this.flashMessages.show("Please fill in all fields", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+
+    //validate that password is the right length
+    if(!this.validateService.validateEntryLength(this.password)){
+      this.flashMessages.show("Password must be 4 to 12 symbols long", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+    //restrict special symbols
+    if(!this.validateService.validateSpecialSymbols(this.password)){
+      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+    //restrict special symbols
+    if(!this.validateService.validateSpecialSymbols(this.username)){
+      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+
     //Authenticate user
     this.apiService.authenticateUser(user).subscribe(data => {
       if(data.success){

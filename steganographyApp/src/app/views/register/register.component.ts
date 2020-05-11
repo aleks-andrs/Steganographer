@@ -33,16 +33,38 @@ export class RegisterComponent implements OnInit {
       info: []
     }
 
-    //Validate that fields are entered
+    //validate that all fields are entered
     if(!this.validateService.validateRegister(user)){
-      this.flashMessages.show('Fill in all fields', {cssClass: 'alert-danger', timeout:3000});
+      this.flashMessages.show("Please fill in all fields", {cssClass: 'alert-danger', timeout:3000});
       return false;
     }
 
-    //Register user
+    //validate that password is the right length
+    if(!this.validateService.validateEntryLength(this.password)){
+      this.flashMessages.show("Password must be 4 to 12 symbols long", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+    //restrict special symbols
+    if(!this.validateService.validateSpecialSymbols(this.name)){
+      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+    //restrict special symbols
+    if(!this.validateService.validateSpecialSymbols(this.password)){
+      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+    //restrict special symbols
+    if(!this.validateService.validateSpecialSymbols(this.username)){
+      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+
+
+    //register user
     this.apiService.registerUser(user).subscribe(data => {
       if(data.success){
-        this.flashMessages.show('New user registered', {cssClass: 'alert-success', timeout:3000});
+        this.flashMessages.show("New user registered", {cssClass: 'alert-success', timeout:3000});
         this.router.navigate(['/login']);
       } else {
         this.flashMessages.show(data.msg, {cssClass: 'alert-danger', timeout:3000});

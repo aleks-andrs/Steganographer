@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class DecryptionComponent implements OnInit {
   decryptedText: string;
   decryptionKey: string;
-  imageVisible: boolean;
+  isDisabled: boolean;
 
   constructor(
     private strEncryptionService: StrEncryptionService,
@@ -24,7 +24,7 @@ export class DecryptionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.imageVisible = false;
+    this.isDisabled = false;
   }
 
 
@@ -36,13 +36,11 @@ export class DecryptionComponent implements OnInit {
 
   //decrypt button
   onClickDecrypt() {
-    this.imageVisible = true;
     //get user input
     decryptionKey: this.decryptionKey;
-    this.decryptedText = " ";
     //validate decryption key
     if(!this.validateService.validateEntry(this.decryptionKey)){
-      this.flashMessages.show('Decryption key missing', {cssClass: 'alert-danger', timeout:3000});
+      this.flashMessages.show('Decryption key is missing', {cssClass: 'alert-danger', timeout:3000});
       return false;
     }
     if(!this.validateService.validateEntryLength(this.decryptionKey)){
@@ -110,9 +108,18 @@ export class DecryptionComponent implements OnInit {
     //set decryption key
     this.strEncryptionService.setPassword(this.decryptionKey);
     //decrypt text
-    let decryptedTextMessage = this.strEncryptionService.decrypt(encryptedText);
-    //display decrypted text
-    this.decryptedText = decryptedTextMessage;
+    try {
+      let decryptedTextMessage = this.strEncryptionService.decrypt(encryptedText);
+      if(decryptedTextMessage == "" || decryptedTextMessage == undefined){
+        throw "error";
+      }
+      //display decrypted text
+      this.isDisabled = true;
+      this.decryptedText = decryptedTextMessage;
+    } catch{
+      this.isDisabled = false;
+      this.flashMessages.show("Wrong Decryption key used. Please try again", {cssClass: 'alert-danger', timeout:3000});
+    }
   }
 
 

@@ -12,7 +12,7 @@ import { ApiService } from './../../services/api.service';
 export class EncryptionComponent implements OnInit {
   textToEncrypt: string;
   encryptionPassword: string;
-  imageVisible: boolean;
+  isVisible: boolean;
   user: any;
   keyList: [any];
 
@@ -24,9 +24,8 @@ export class EncryptionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.imageVisible = false;
+    this.isVisible = false;
     if(this.apiService.loggedIn()){
-      alert("true");                                //DELETE LATER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       //get the list of all keys associated with user
       this.apiService.getSavedDetails().subscribe( res => {
         let data = {} as any;
@@ -45,7 +44,7 @@ export class EncryptionComponent implements OnInit {
     encryptionPassword: this.encryptionPassword;
     //Validate encryption key field
     if(!this.validateService.validateEntry(this.encryptionPassword)){
-      this.flashMessages.show('Encryption key missing', {cssClass: 'alert-danger', timeout:3000});
+      this.flashMessages.show('Encryption key is missing', {cssClass: 'alert-danger', timeout:3000});
       return false;
     }
     if(!this.validateService.validateEntryLength(this.encryptionPassword)){
@@ -170,6 +169,7 @@ export class EncryptionComponent implements OnInit {
     newCanvasContext.drawImage(newCanvas, 0, 0, canvasWidth, canvasHeight);
     var newImage = new Image();
     newImage.src = newCanvas.toDataURL("image/png");
+    this.isVisible = true;
     //load new picture
     let generatedImageElement: HTMLImageElement = document.getElementById('resultImage') as HTMLImageElement;
     generatedImageElement.src = newImage.src;
@@ -202,7 +202,7 @@ export class EncryptionComponent implements OnInit {
         }
       }
     } else {
-      alert("File " + file.name + " is not an image type");
+      alert("Selected file is not an image type");
     }
   }
 }

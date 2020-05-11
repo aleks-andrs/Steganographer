@@ -3,8 +3,11 @@
 	<div class="w3-padding-16 w3-center">
 		<h2>Decrypt text</h2>
 	</div>
-	<!-- Left side -->
 	<div class="w3-row-padding">
+		<div class="w3-panel w3-padding w3-border w3-round-xlarge">
+			<p>To decode hidden text from an image, please select the right image and provide a corresponding decryption key. Keys may be stored in the Password Manager.</p>
+		</div>
+		<!-- Left side -->
 		<div class="w3-third w3-padding">
 			<div class="w3-padding w3-half">
 				<input type="file" id="fileUpload" name="file" style="display: none" accept="image/*">
@@ -23,14 +26,14 @@
 				<input class="w3-input w3-border w3-round" type="password" placeholder="Decryption key" [(ngModel)]="decryptionKey" name="decryptionKey">
 			</div>
 			<div class="w3-third w3-padding">
+				<button class="w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickDecrypt()">Decrypt</button>
+			</div>
+			<div class="w3-third w3-padding">
 				<button *ngIf="apiService.loggedIn()" class="w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickSelectKey()">Select Key</button>
 				<button *ngIf="!apiService.loggedIn()" class="w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row" [disabled]="true">Select Key</button>
 			</div>
-			<div class="w3-third w3-padding">
-				<button class="w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickDecrypt()">Decrypt</button>
-			</div>
 			<div class="w3-padding">
-				<textarea class="w3-input w3-border w3-round" placeholder="Decrypted text" rows="8" [(ngModel)]="decryptedText" name="decryptedText"></textarea>
+				<textarea class="w3-input w3-border w3-round" [disabled]="!isDisabled" placeholder="Decrypted text" rows="8" [(ngModel)]="decryptedText" name="decryptedText"></textarea>
 			</div>
 		</div>
 	</div>
