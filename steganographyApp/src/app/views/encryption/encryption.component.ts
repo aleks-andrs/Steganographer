@@ -25,17 +25,20 @@ export class EncryptionComponent implements OnInit {
 
   ngOnInit() {
     this.imageVisible = false;
-    //get the list of all keys associated with user
-    this.apiService.getSavedDetails().subscribe( res => {
-      let data = {} as any;
-      data = res;
-      this.user = data.user;
-      this.keyList = this.user.info;
-    },
-    err => {
-      console.log(err);
-      return false;
-    });
+    if(this.apiService.loggedIn()){
+      alert("true");                                //DELETE LATER !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      //get the list of all keys associated with user
+      this.apiService.getSavedDetails().subscribe( res => {
+        let data = {} as any;
+        data = res;
+        this.user = data.user;
+        this.keyList = this.user.info;
+      },
+      err => {
+        console.log(err);
+        return false;
+      });
+    }
   }
 
   onClickSaveKey(){
@@ -69,7 +72,6 @@ export class EncryptionComponent implements OnInit {
   }
 
   onClickEncrypt() {
-    this.imageVisible = true;
     //get user input
     textToEncrypt: this.textToEncrypt;
     encryptionPassword: this.encryptionPassword;
@@ -91,7 +93,86 @@ export class EncryptionComponent implements OnInit {
     this.strEncryptionService.setPassword(this.encryptionPassword);
     //encrypt text
     let encryptedText = this.strEncryptionService.encrypt(this.textToEncrypt);
-    alert(encryptedText);
+
+    //get chosen image
+    let imageElement: HTMLImageElement = document.getElementById('selectedImage') as HTMLImageElement;
+    var imgWidth = imageElement.naturalWidth;
+    var imgHeight = imageElement.naturalHeight;
+
+    //check if text length is too long to be encoded in the picture
+    if (((encryptedText.length+32) * 8) > (imgHeight * imgWidth * 3)) {
+      this.flashMessages.show("Provided text is too long for this picture", {cssClass: 'alert-danger', timeout:3000});
+      return;
+    }
+    //convert text to binary
+    var binaryCode = this.convertTextToBinary(encryptedText);
+    //encode binary code inside the picture
+    this.encodeBinaryIntoImage(binaryCode);
+  }
+
+  //text to binary converter
+  convertTextToBinary(cryptoText){
+    function zeroPad(idx) {
+        return "00000000".slice(String(idx).length) + idx;
+    }
+    return cryptoText.replace(/[\s\S]/g, function(cryptoText) {
+        cryptoText = zeroPad(cryptoText.charCodeAt().toString(2));
+        return cryptoText
+    });
+  }
+
+  encodeBinaryIntoImage(binaryTxt){
+    //create canvas objects
+    var originalCanvas = document.createElement("canvas");
+    var newCanvas = document.createElement("canvas");
+    //get selected image details
+    let selectedImageElement: HTMLImageElement = document.getElementById('selectedImage') as HTMLImageElement;
+    var canvasWidth = selectedImageElement.naturalWidth;
+    var canvasHeight = selectedImageElement.naturalHeight;
+    //set canvas dimensions
+    originalCanvas.height = canvasHeight;
+    originalCanvas.width = canvasWidth;
+    newCanvas.height = canvasHeight;
+    newCanvas.width = canvasWidth;
+    //generate context
+    var originalContext = originalCanvas.getContext("2d");
+    var newCanvasContext = newCanvas.getContext("2d");
+    //set context
+    originalContext.drawImage(selectedImageElement, 0, 0);
+    //read pixel data
+    var origImageData = originalContext.getImageData(0, 0, canvasWidth, canvasHeight);
+    var pixelData = origImageData.data;
+    //append binary text with 2 empty bytes(start flag)
+    binaryTxt = "1000000100000001" + binaryTxt;
+    //get binary text length and add space for 2 more empty bytes(16 bits) at the end
+    var lengthBinary = Math.ceil(binaryTxt.length/3)*4+16;
+    //equalize the data and encode binary message
+    var counter = 0;
+    for (var i = 0, n = lengthBinary; i < n; i += 4) {
+      for (var pixelValue = 0; pixelValue < 3; pixelValue ++) {
+        if (counter < binaryTxt.length) {
+          if (pixelData[i + pixelValue] %2 != 0){
+            pixelData[i + pixelValue]--;
+          }
+          pixelData[i + pixelValue] += parseInt(binaryTxt[counter]);
+          counter++;
+        }
+        else {
+          //attach empty bytes at the end of the string
+          if (pixelData[i + pixelValue] %2 != 0){
+            pixelData[i + pixelValue]--;
+          }
+        }
+      }
+    }
+    //upload pixels with encoded string to the canvas and convert to png image
+    newCanvasContext.putImageData(origImageData, 0, 0);
+    newCanvasContext.drawImage(newCanvas, 0, 0, canvasWidth, canvasHeight);
+    var newImage = new Image();
+    newImage.src = newCanvas.toDataURL("image/png");
+    //load new picture
+    let generatedImageElement: HTMLImageElement = document.getElementById('resultImage') as HTMLImageElement;
+    generatedImageElement.src = newImage.src;
   }
 
 
