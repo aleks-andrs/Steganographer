@@ -23,7 +23,7 @@ export class ApiService {
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post<any>('http://127.0.0.1:3000/users/register', user, httpOptions);
+    return this.http.post<any>('users/register', user, httpOptions);
   }
 
   //authorise user
@@ -33,7 +33,7 @@ export class ApiService {
         'Content-Type': 'application/json'
       })
     };
-    return this.http.post<any>('http://127.0.0.1:3000/users/authenticate', user, httpOptions);
+    return this.http.post<any>('users/authenticate', user, httpOptions);
   }
 
   //update saved encryption keys
@@ -45,7 +45,7 @@ export class ApiService {
         'Authorization': this.authToken
       })
     };
-    return this.http.put<any>('http://127.0.0.1:3000/users/update', keyList, httpOptions);
+    return this.http.put<any>('users/update', keyList, httpOptions);
   }
 
   storeUserData(token, user){
@@ -69,7 +69,7 @@ export class ApiService {
         'Authorization': this.authToken
       })
     };
-    return this.http.get<any>('http://127.0.0.1:3000/users/details', httpOptions);
+    return this.http.get<any>('users/details', httpOptions);
   }
 
   //get currently logged in user
