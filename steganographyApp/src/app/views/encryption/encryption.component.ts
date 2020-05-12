@@ -3,6 +3,7 @@ import { StrEncryptionService } from "./../../services/str.encryption.service";
 import { ValidateService } from './../../services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { ApiService } from './../../services/api.service';
+import { SharingService } from './../../services/sharing.service';
 
 @Component({
   selector: 'app-encryption',
@@ -10,6 +11,7 @@ import { ApiService } from './../../services/api.service';
   styleUrls: ['./encryption.component.css']
 })
 export class EncryptionComponent implements OnInit {
+  imageSrc:any;
   textToEncrypt: string;
   encryptionPassword: string;
   isVisible: boolean;
@@ -19,12 +21,25 @@ export class EncryptionComponent implements OnInit {
   constructor(
     private strEncryptionService: StrEncryptionService,
     private validateService: ValidateService,
+    private sharingService: SharingService,
     public apiService: ApiService,
     private flashMessages: FlashMessagesService
   ) { }
 
   ngOnInit() {
     this.isVisible = false;
+    this.imageSrc = this.sharingService.getImageSrc();
+    try{
+      if(this.imageSrc){
+        let imageElement: HTMLImageElement = document.getElementById('selectedImage') as HTMLImageElement;
+        imageElement.src = this.imageSrc;
+      }
+    } catch(err){
+      console.log(err);
+    }
+
+
+
     if(this.apiService.loggedIn()){
       //get the list of all keys associated with user
       this.apiService.getSavedDetails().subscribe( res => {

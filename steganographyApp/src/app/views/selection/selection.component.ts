@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from "./../../services/api.service";
+import { ApiService } from './../../services/api.service';
 import { Router } from '@angular/router';
+import { SharingService } from './../../services/sharing.service';
 
 @Component({
   selector: 'app-selection',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./selection.component.css']
 })
 export class SelectionComponent implements OnInit {
+  data:any = {text: "example"};
   image1: any;
   image2: any;
   image3: any;
@@ -20,20 +22,23 @@ export class SelectionComponent implements OnInit {
 
   constructor(
     private apiService: ApiService,
+    private sharingService: SharingService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    //load images from Picsum API
     this.getImagesFromAPI();
   }
 
+  //get image src and pass to encryption component
   onClickGet(src){
-    alert(src)
-    //this.router.navigate(['/encryption']);
+    this.sharingService.setImageSrc(src);
+    this.router.navigate(['/encryption']);
   }
 
   getImagesFromAPI(){
-    this.apiService.getImage("https://picsum.photos/720/480").subscribe(res => {
+    this.apiService.getImage("https://picsum.photos/1366/768").subscribe(res => {
       let reader = new FileReader();
       reader.addEventListener("load", () => {
         this.image1 = reader.result;
@@ -45,7 +50,7 @@ export class SelectionComponent implements OnInit {
       console.log(error);
     });
 
-    this.apiService.getImage("https://picsum.photos/500/500").subscribe(res => {
+    this.apiService.getImage("https://picsum.photos/750/750").subscribe(res => {
       let reader = new FileReader();
       reader.addEventListener("load", () => {
         this.image2 = reader.result;
@@ -81,7 +86,7 @@ export class SelectionComponent implements OnInit {
       console.log(error);
     });
 
-    this.apiService.getImage("https://picsum.photos/720/480").subscribe(res => {
+    this.apiService.getImage("https://picsum.photos/1366/768").subscribe(res => {
       let reader = new FileReader();
       reader.addEventListener("load", () => {
         this.image5 = reader.result;
@@ -93,7 +98,7 @@ export class SelectionComponent implements OnInit {
       console.log(error);
     });
 
-    this.apiService.getImage("https://picsum.photos/500/500").subscribe(res => {
+    this.apiService.getImage("https://picsum.photos/750/750").subscribe(res => {
       let reader = new FileReader();
       reader.addEventListener("load", () => {
         this.image6 = reader.result;
@@ -105,7 +110,7 @@ export class SelectionComponent implements OnInit {
       console.log(error);
     });
 
-    this.apiService.getImage("https://picsum.photos/500/500").subscribe(res => {
+    this.apiService.getImage("https://picsum.photos/750/750").subscribe(res => {
       let reader = new FileReader();
       reader.addEventListener("load", () => {
         this.image7 = reader.result;
@@ -129,7 +134,7 @@ export class SelectionComponent implements OnInit {
       console.log(error);
     });
 
-    this.apiService.getImage("https://picsum.photos/720/480").subscribe(res => {
+    this.apiService.getImage("https://picsum.photos/1366/768").subscribe(res => {
       let reader = new FileReader();
       reader.addEventListener("load", () => {
         this.image9 = reader.result;

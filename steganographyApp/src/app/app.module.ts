@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,8 +17,8 @@ import { PasswordmanagerComponent } from './views/passwordmanager/passwordmanage
 import { HomeComponent } from './views/home/home.component';
 import { ApiService } from './services/api.service';
 import { ValidateService } from './services/validate.service';
-import { AuthGuard } from "./services/guard.auth";
-import { FlashMessagesModule } from 'angular2-flash-messages';
+import { AuthGuard } from './services/guard.auth';
+import { SharingService } from './services/sharing.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     JwtHelperService,
     ApiService,
     ValidateService,
+    SharingService,
     AuthGuard
   ],
   bootstrap: [AppComponent]

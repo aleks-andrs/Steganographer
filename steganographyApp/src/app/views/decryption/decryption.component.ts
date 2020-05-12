@@ -116,7 +116,7 @@ export class DecryptionComponent implements OnInit {
       //display decrypted text
       this.isDisabled = true;
       this.decryptedText = decryptedTextMessage;
-    } catch{
+    } catch(err){
       this.isDisabled = false;
       this.flashMessages.show("Wrong Decryption key used. Please try again", {cssClass: 'alert-danger', timeout:3000});
     }
@@ -149,7 +149,7 @@ export class DecryptionComponent implements OnInit {
         }
       }
     } else {
-      alert("File: " + file.name + " is not an image type");
+      alert("Selected file is not an image type");
     }
   }
 
