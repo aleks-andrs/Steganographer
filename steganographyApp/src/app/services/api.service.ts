@@ -85,4 +85,9 @@ export class ApiService {
     }
     return !helperService.isTokenExpired(localStorage.id_token);
   }
+
+  getImage(imageUrl: string): Observable<Blob> {
+    return this.http.get(imageUrl, { responseType: 'blob' });
+  }
+
 }
