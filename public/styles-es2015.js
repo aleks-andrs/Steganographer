@@ -588,10 +588,10 @@ module.exports = exported;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\EnterpriseWebSystems Coursework\steganographyApp\node_modules\w3-css\w3.css */"./node_modules/w3-css/w3.css");
-__webpack_require__(/*! D:\EnterpriseWebSystems Coursework\steganographyApp\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
-__webpack_require__(/*! D:\EnterpriseWebSystems Coursework\steganographyApp\src\styles.css */"./src/styles.css");
-module.exports = __webpack_require__(/*! D:\EnterpriseWebSystems Coursework\steganographyApp\src\assets\fonts\fonts-quicksand.css */"./src/assets/fonts/fonts-quicksand.css");
+__webpack_require__(/*! D:\EnterpriseWebSystems\steganographyApp\node_modules\w3-css\w3.css */"./node_modules/w3-css/w3.css");
+__webpack_require__(/*! D:\EnterpriseWebSystems\steganographyApp\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! D:\EnterpriseWebSystems\steganographyApp\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! D:\EnterpriseWebSystems\steganographyApp\src\assets\fonts\fonts-quicksand.css */"./src/assets/fonts/fonts-quicksand.css");
 
 
 /***/ })

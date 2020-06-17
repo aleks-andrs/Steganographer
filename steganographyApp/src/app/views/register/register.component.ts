@@ -39,27 +39,17 @@ export class RegisterComponent implements OnInit {
       return false;
     }
 
+    //restrict special symbols and spaces
+    if(!this.validateService.validateAlphaNumericRegister(user)){
+      this.flashMessages.show("Special symbols or empty spaces are not permitted", {cssClass: 'alert-danger', timeout:3000});
+      return false;
+    }
+
     //validate that password is the right length
     if(!this.validateService.validateEntryLength(this.password)){
       this.flashMessages.show("Password must be 4 to 12 symbols long", {cssClass: 'alert-danger', timeout:3000});
       return false;
     }
-    //restrict special symbols
-    if(!this.validateService.validateSpecialSymbols(this.name)){
-      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
-      return false;
-    }
-    //restrict special symbols
-    if(!this.validateService.validateSpecialSymbols(this.password)){
-      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
-      return false;
-    }
-    //restrict special symbols
-    if(!this.validateService.validateSpecialSymbols(this.username)){
-      this.flashMessages.show("< > tags are not allowed", {cssClass: 'alert-danger', timeout:3000});
-      return false;
-    }
-
 
     //register user
     this.apiService.registerUser(user).subscribe(data => {
