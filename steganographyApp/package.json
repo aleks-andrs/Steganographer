@@ -30,6 +30,7 @@
     "sjcl": "^1.0.8",
     "tslib": "^1.10.0",
     "w3-css": "^4.1.0",
+    "websocket-extensions": "^0.1.4",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
