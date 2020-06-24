@@ -12,6 +12,7 @@
     "body-parser": "*",
     "cors": "*",
     "express": "*",
+    "express-validator": "^6.6.0",
     "jsonwebtoken": "*",
     "mongodb": "^3.5.7",
     "mongoose": "*",

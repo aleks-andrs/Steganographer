@@ -1193,22 +1193,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           } else {
             return true;
           }
-        } //Validate any field for present text
+        } //validate register input is alphanumeric
+
+      }, {
+        key: "validateAlphaNumericRegister",
+        value: function validateAlphaNumericRegister(user) {
+          var acceptableInput = /^[0-9a-zA-Z]+$/;
+          var extendedAcceptableInput = /^[0-9a-zA-Z]+( [0-9a-zA-Z]+)*$/;
+
+          if (user.name.match(extendedAcceptableInput) && user.username.match(acceptableInput) && user.password.match(acceptableInput)) {
+            return true;
+          } else {
+            return false;
+          }
+        } //validate login input is alphanumeric
+
+      }, {
+        key: "validateAlphaNumericLogin",
+        value: function validateAlphaNumericLogin(user) {
+          var acceptableInput = /^[0-9a-zA-Z]+$/;
+
+          if (user.username.match(acceptableInput) && user.password.match(acceptableInput)) {
+            return true;
+          } else {
+            return false;
+          }
+        } //validate any field for present text
 
       }, {
         key: "validateEntry",
         value: function validateEntry(givenString) {
           if (givenString == undefined || givenString.length < 1) {
-            return false;
-          } else {
-            return true;
-          }
-        } //validate for tags
-
-      }, {
-        key: "validateSpecialSymbols",
-        value: function validateSpecialSymbols(givenString) {
-          if (givenString.includes('<') || givenString.includes('>')) {
             return false;
           } else {
             return true;
@@ -2344,7 +2359,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Third party content");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Third party content:");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2494,29 +2509,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               timeout: 3000
             });
             return false;
+          } //validate alphanumeric input
+
+
+          if (!this.validateService.validateAlphaNumericLogin(user)) {
+            this.flashMessages.show("Special symbols or empty spaces are not permitted", {
+              cssClass: 'alert-danger',
+              timeout: 3000
+            });
+            return false;
           } //validate that password is the right length
 
 
           if (!this.validateService.validateEntryLength(this.password)) {
             this.flashMessages.show("Password must be 4 to 12 symbols long", {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-            return false;
-          } //restrict special symbols
-
-
-          if (!this.validateService.validateSpecialSymbols(this.password)) {
-            this.flashMessages.show("< > tags are not allowed", {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-            return false;
-          } //restrict special symbols
-
-
-          if (!this.validateService.validateSpecialSymbols(this.username)) {
-            this.flashMessages.show("< > tags are not allowed", {
               cssClass: 'alert-danger',
               timeout: 3000
             });
@@ -3053,38 +3059,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               timeout: 3000
             });
             return false;
+          } //restrict special symbols and spaces
+
+
+          if (!this.validateService.validateAlphaNumericRegister(user)) {
+            this.flashMessages.show("Special symbols or empty spaces are not permitted", {
+              cssClass: 'alert-danger',
+              timeout: 3000
+            });
+            return false;
           } //validate that password is the right length
 
 
           if (!this.validateService.validateEntryLength(this.password)) {
             this.flashMessages.show("Password must be 4 to 12 symbols long", {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-            return false;
-          } //restrict special symbols
-
-
-          if (!this.validateService.validateSpecialSymbols(this.name)) {
-            this.flashMessages.show("< > tags are not allowed", {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-            return false;
-          } //restrict special symbols
-
-
-          if (!this.validateService.validateSpecialSymbols(this.password)) {
-            this.flashMessages.show("< > tags are not allowed", {
-              cssClass: 'alert-danger',
-              timeout: 3000
-            });
-            return false;
-          } //restrict special symbols
-
-
-          if (!this.validateService.validateSpecialSymbols(this.username)) {
-            this.flashMessages.show("< > tags are not allowed", {
               cssClass: 'alert-danger',
               timeout: 3000
             });

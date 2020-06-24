@@ -622,18 +622,30 @@ class ValidateService {
             return true;
         }
     }
-    //Validate any field for present text
-    validateEntry(givenString) {
-        if (givenString == undefined || givenString.length < 1) {
-            return false;
-        }
-        else {
+    //validate register input is alphanumeric
+    validateAlphaNumericRegister(user) {
+        var acceptableInput = /^[0-9a-zA-Z]+$/;
+        var extendedAcceptableInput = /^[0-9a-zA-Z]+( [0-9a-zA-Z]+)*$/;
+        if (user.name.match(extendedAcceptableInput) && user.username.match(acceptableInput) && user.password.match(acceptableInput)) {
             return true;
         }
+        else {
+            return false;
+        }
     }
-    //validate for tags
-    validateSpecialSymbols(givenString) {
-        if (givenString.includes('<') || givenString.includes('>')) {
+    //validate login input is alphanumeric
+    validateAlphaNumericLogin(user) {
+        var acceptableInput = /^[0-9a-zA-Z]+$/;
+        if (user.username.match(acceptableInput) && user.password.match(acceptableInput)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    //validate any field for present text
+    validateEntry(givenString) {
+        if (givenString == undefined || givenString.length < 1) {
             return false;
         }
         else {
@@ -1271,7 +1283,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h4");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Third party content");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Third party content:");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "This application is utilising a ");
@@ -1347,19 +1359,14 @@ class LoginComponent {
             this.flashMessages.show("Please fill in all fields", { cssClass: 'alert-danger', timeout: 3000 });
             return false;
         }
+        //validate alphanumeric input
+        if (!this.validateService.validateAlphaNumericLogin(user)) {
+            this.flashMessages.show("Special symbols or empty spaces are not permitted", { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
         //validate that password is the right length
         if (!this.validateService.validateEntryLength(this.password)) {
             this.flashMessages.show("Password must be 4 to 12 symbols long", { cssClass: 'alert-danger', timeout: 3000 });
-            return false;
-        }
-        //restrict special symbols
-        if (!this.validateService.validateSpecialSymbols(this.password)) {
-            this.flashMessages.show("< > tags are not allowed", { cssClass: 'alert-danger', timeout: 3000 });
-            return false;
-        }
-        //restrict special symbols
-        if (!this.validateService.validateSpecialSymbols(this.username)) {
-            this.flashMessages.show("< > tags are not allowed", { cssClass: 'alert-danger', timeout: 3000 });
             return false;
         }
         //Authenticate user
@@ -1616,24 +1623,14 @@ class RegisterComponent {
             this.flashMessages.show("Please fill in all fields", { cssClass: 'alert-danger', timeout: 3000 });
             return false;
         }
+        //restrict special symbols and spaces
+        if (!this.validateService.validateAlphaNumericRegister(user)) {
+            this.flashMessages.show("Special symbols or empty spaces are not permitted", { cssClass: 'alert-danger', timeout: 3000 });
+            return false;
+        }
         //validate that password is the right length
         if (!this.validateService.validateEntryLength(this.password)) {
             this.flashMessages.show("Password must be 4 to 12 symbols long", { cssClass: 'alert-danger', timeout: 3000 });
-            return false;
-        }
-        //restrict special symbols
-        if (!this.validateService.validateSpecialSymbols(this.name)) {
-            this.flashMessages.show("< > tags are not allowed", { cssClass: 'alert-danger', timeout: 3000 });
-            return false;
-        }
-        //restrict special symbols
-        if (!this.validateService.validateSpecialSymbols(this.password)) {
-            this.flashMessages.show("< > tags are not allowed", { cssClass: 'alert-danger', timeout: 3000 });
-            return false;
-        }
-        //restrict special symbols
-        if (!this.validateService.validateSpecialSymbols(this.username)) {
-            this.flashMessages.show("< > tags are not allowed", { cssClass: 'alert-danger', timeout: 3000 });
             return false;
         }
         //register user
