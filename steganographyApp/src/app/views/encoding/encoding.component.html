@@ -1,7 +1,7 @@
 <!-- Encrypt frame -->
 <div class="w3-display-container">
 	<div class="w3-padding-16 w3-center">
-		<h2>Encrypt text</h2>
+		<h2>Encode text</h2>
 	</div>
 	<div class="w3-row-padding">
 		<div class="w3-panel w3-padding  w3-border w3-round-xlarge">
@@ -29,13 +29,13 @@
 		<!-- Right side -->
 		<div class="w3-rest w3-padding">
 			<div class="w3-padding">
-				<textarea class="w3-input w3-border w3-round" placeholder="Text to encrypt" rows="8" [(ngModel)]="textToEncrypt" name="textToEncrypt"></textarea>
+				<textarea class="w3-input w3-border w3-round" placeholder="Text to encode" rows="8" [(ngModel)]="textToEncrypt" name="textToEncrypt"></textarea>
 			</div>
 			<div class="w3-third w3-padding">
 				<input class="w3-input w3-border w3-round" type="password" placeholder="Encryption key" [(ngModel)]="encryptionPassword" name="encryptionPassword">
 			</div>
 			<div class="w3-third w3-padding">
-				<button class="w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickEncrypt()">Encrypt</button>
+				<button class="w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickEncrypt()">Encode</button>
 			</div>
 			<div class="w3-third w3-padding">
 				<button *ngIf="apiService.loggedIn()" class="w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row" (click)="onClickSaveKey()">Save Key</button>

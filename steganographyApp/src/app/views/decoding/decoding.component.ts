@@ -6,11 +6,11 @@ import { ApiService } from './../../services/api.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-decryption',
-  templateUrl: './decryption.component.html',
-  styleUrls: ['./decryption.component.css']
+  selector: 'app-decoding',
+  templateUrl: './decoding.component.html',
+  styleUrls: ['./decoding.component.css']
 })
-export class DecryptionComponent implements OnInit {
+export class DecodingComponent implements OnInit {
   decryptedText: string;
   decryptionKey: string;
   isDisabled: boolean;

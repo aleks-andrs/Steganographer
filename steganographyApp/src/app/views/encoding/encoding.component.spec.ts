@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DecryptionComponent } from './decryption.component';
+import { EncodingComponent } from './encoding.component';
 
-describe('DecryptionComponent', () => {
-  let component: DecryptionComponent;
-  let fixture: ComponentFixture<DecryptionComponent>;
+describe('EncodingComponent', () => {
+  let component: EncodingComponent;
+  let fixture: ComponentFixture<EncodingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DecryptionComponent ]
+      declarations: [ EncodingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DecryptionComponent);
+    fixture = TestBed.createComponent(EncodingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

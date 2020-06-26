@@ -6,11 +6,11 @@ import { ApiService } from './../../services/api.service';
 import { SharingService } from './../../services/sharing.service';
 
 @Component({
-  selector: 'app-encryption',
-  templateUrl: './encryption.component.html',
-  styleUrls: ['./encryption.component.css']
+  selector: 'app-encoding',
+  templateUrl: './encoding.component.html',
+  styleUrls: ['./encoding.component.css']
 })
-export class EncryptionComponent implements OnInit {
+export class EncodingComponent implements OnInit {
   imageSrc:any;
   textToEncrypt: string;
   encryptionPassword: string;

@@ -31,10 +31,10 @@ export class SelectionComponent implements OnInit {
     this.getImagesFromAPI();
   }
 
-  //get image src and pass to encryption component
+  //get image src and pass to encoding component
   onClickGet(src){
     this.sharingService.setImageSrc(src);
-    this.router.navigate(['/encryption']);
+    this.router.navigate(['/encoding']);
   }
 
   getImagesFromAPI(){

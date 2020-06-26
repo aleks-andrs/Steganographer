@@ -9,8 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SelectionComponent } from './views/selection/selection.component';
-import { EncryptionComponent } from './views/encryption/encryption.component';
-import { DecryptionComponent } from './views/decryption/decryption.component';
+import { EncodingComponent } from './views/encoding/encoding.component';
+import { DecodingComponent } from './views/decoding/decoding.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { PasswordmanagerComponent } from './views/passwordmanager/passwordmanager.component';
@@ -19,18 +19,20 @@ import { ApiService } from './services/api.service';
 import { ValidateService } from './services/validate.service';
 import { AuthGuard } from './services/guard.auth';
 import { SharingService } from './services/sharing.service';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SelectionComponent,
-    EncryptionComponent,
-    DecryptionComponent,
+    EncodingComponent,
+    DecodingComponent,
     LoginComponent,
     RegisterComponent,
     PasswordmanagerComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
