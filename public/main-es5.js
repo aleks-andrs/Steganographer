@@ -75,15 +75,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _views_encryption_encryption_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! ./views/encryption/encryption.component */
-    "./src/app/views/encryption/encryption.component.ts");
+    var _views_encoding_encoding_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ./views/encoding/encoding.component */
+    "./src/app/views/encoding/encoding.component.ts");
     /* harmony import */
 
 
-    var _views_decryption_decryption_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ./views/decryption/decryption.component */
-    "./src/app/views/decryption/decryption.component.ts");
+    var _views_decoding_decoding_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./views/decoding/decoding.component */
+    "./src/app/views/decoding/decoding.component.ts");
     /* harmony import */
 
 
@@ -123,11 +123,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       path: 'home',
       component: _views_home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"]
     }, {
-      path: 'encryption',
-      component: _views_encryption_encryption_component__WEBPACK_IMPORTED_MODULE_3__["EncryptionComponent"]
+      path: 'encoding',
+      component: _views_encoding_encoding_component__WEBPACK_IMPORTED_MODULE_3__["EncodingComponent"]
     }, {
-      path: 'decryption',
-      component: _views_decryption_decryption_component__WEBPACK_IMPORTED_MODULE_4__["DecryptionComponent"]
+      path: 'decoding',
+      component: _views_decoding_decoding_component__WEBPACK_IMPORTED_MODULE_4__["DecodingComponent"]
     }, {
       path: 'passwordManager',
       component: _views_passwordmanager_passwordmanager_component__WEBPACK_IMPORTED_MODULE_7__["PasswordmanagerComponent"],
@@ -226,6 +226,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./footer/footer.component */
+    "./src/app/footer/footer.component.ts");
 
     var AppComponent = function AppComponent() {
       _classCallCheck(this, AppComponent);
@@ -240,7 +246,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AppComponent,
       selectors: [["app-root"]],
-      decls: 5,
+      decls: 6,
       vars: 0,
       consts: [[1, "w3-display-container", "w3-center"], [1, "w3-padding-large"]],
       template: function AppComponent_Template(rf, ctx) {
@@ -258,9 +264,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "router-outlet");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "app-footer");
         }
       },
-      directives: [_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__["NavbarComponent"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"]],
+      directives: [_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_1__["NavbarComponent"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_2__["FlashMessagesComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterOutlet"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__["FooterComponent"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -365,15 +373,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _views_encryption_encryption_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
-    /*! ./views/encryption/encryption.component */
-    "./src/app/views/encryption/encryption.component.ts");
+    var _views_encoding_encoding_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./views/encoding/encoding.component */
+    "./src/app/views/encoding/encoding.component.ts");
     /* harmony import */
 
 
-    var _views_decryption_decryption_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
-    /*! ./views/decryption/decryption.component */
-    "./src/app/views/decryption/decryption.component.ts");
+    var _views_decoding_decoding_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! ./views/decoding/decoding.component */
+    "./src/app/views/decoding/decoding.component.ts");
     /* harmony import */
 
 
@@ -422,6 +430,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _services_sharing_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
     /*! ./services/sharing.service */
     "./src/app/services/sharing.service.ts");
+    /* harmony import */
+
+
+    var _footer_footer_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+    /*! ./footer/footer.component */
+    "./src/app/footer/footer.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
@@ -444,7 +458,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"], _views_selection_selection_component__WEBPACK_IMPORTED_MODULE_9__["SelectionComponent"], _views_encryption_encryption_component__WEBPACK_IMPORTED_MODULE_10__["EncryptionComponent"], _views_decryption_decryption_component__WEBPACK_IMPORTED_MODULE_11__["DecryptionComponent"], _views_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _views_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"], _views_passwordmanager_passwordmanager_component__WEBPACK_IMPORTED_MODULE_14__["PasswordmanagerComponent"], _views_home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"], _views_selection_selection_component__WEBPACK_IMPORTED_MODULE_9__["SelectionComponent"], _views_encoding_encoding_component__WEBPACK_IMPORTED_MODULE_10__["EncodingComponent"], _views_decoding_decoding_component__WEBPACK_IMPORTED_MODULE_11__["DecodingComponent"], _views_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _views_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"], _views_passwordmanager_passwordmanager_component__WEBPACK_IMPORTED_MODULE_14__["PasswordmanagerComponent"], _views_home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_20__["FooterComponent"]],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesModule"]]
       });
     })();
@@ -455,7 +469,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"], _views_selection_selection_component__WEBPACK_IMPORTED_MODULE_9__["SelectionComponent"], _views_encryption_encryption_component__WEBPACK_IMPORTED_MODULE_10__["EncryptionComponent"], _views_decryption_decryption_component__WEBPACK_IMPORTED_MODULE_11__["DecryptionComponent"], _views_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _views_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"], _views_passwordmanager_passwordmanager_component__WEBPACK_IMPORTED_MODULE_14__["PasswordmanagerComponent"], _views_home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_8__["NavbarComponent"], _views_selection_selection_component__WEBPACK_IMPORTED_MODULE_9__["SelectionComponent"], _views_encoding_encoding_component__WEBPACK_IMPORTED_MODULE_10__["EncodingComponent"], _views_decoding_decoding_component__WEBPACK_IMPORTED_MODULE_11__["DecodingComponent"], _views_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"], _views_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"], _views_passwordmanager_passwordmanager_component__WEBPACK_IMPORTED_MODULE_14__["PasswordmanagerComponent"], _views_home_home_component__WEBPACK_IMPORTED_MODULE_15__["HomeComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_20__["FooterComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"], angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesModule"].forRoot()],
           providers: [{
             provide: _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_4__["JWT_OPTIONS"],
@@ -464,6 +478,87 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
         }]
       }], null, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/footer/footer.component.ts":
+  /*!********************************************!*\
+    !*** ./src/app/footer/footer.component.ts ***!
+    \********************************************/
+
+  /*! exports provided: FooterComponent */
+
+  /***/
+  function srcAppFooterFooterComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FooterComponent", function () {
+      return FooterComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var FooterComponent = /*#__PURE__*/function () {
+      function FooterComponent() {
+        _classCallCheck(this, FooterComponent);
+      }
+
+      _createClass(FooterComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return FooterComponent;
+    }();
+
+    FooterComponent.ɵfac = function FooterComponent_Factory(t) {
+      return new (t || FooterComponent)();
+    };
+
+    FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: FooterComponent,
+      selectors: [["app-footer"]],
+      decls: 3,
+      vars: 0,
+      template: function FooterComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "\xA9 2020 by aleks-andrs");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+      },
+      styles: ["p[_ngcontent-%COMP%]{\r\n  text-align: center;\r\n  opacity: 0.5;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQWtCO0VBQ2xCLFlBQVk7QUFDZCIsImZpbGUiOiJzcmMvYXBwL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInB7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIG9wYWNpdHk6IDAuNTtcclxufVxyXG4iXX0= */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FooterComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-footer',
+          templateUrl: './footer.component.html',
+          styleUrls: ['./footer.component.css']
+        }]
+      }], function () {
+        return [];
+      }, null);
     })();
     /***/
 
@@ -602,7 +697,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-navbar"]],
       decls: 25,
       vars: 4,
-      consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "bd-navbar"], ["href", "/home", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarSupportedContent", "aria-controls", "navbarSupportedContent", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto", "pt-1"], [1, "nav-item"], ["href", "/encryption", 1, "nav-link"], ["href", "/decryption", 1, "nav-link"], ["href", "/selection", 1, "nav-link"], ["class", "nav-link", "href", "/passwordManager", 4, "ngIf"], [1, "navbar-nav", "my-2", "my-lg-0", "pt-1"], ["class", "nav-link", "href", "/login", 4, "ngIf"], ["class", "nav-link", "href", "/register", 4, "ngIf"], ["class", "nav-link", "href", "/register", 3, "click", 4, "ngIf"], ["href", "/passwordManager", 1, "nav-link"], ["href", "/login", 1, "nav-link"], ["href", "/register", 1, "nav-link"], ["href", "/register", 1, "nav-link", 3, "click"]],
+      consts: [[1, "navbar", "navbar-expand-lg", "navbar-light", "bd-navbar"], ["href", "/home", 1, "navbar-brand"], ["type", "button", "data-toggle", "collapse", "data-target", "#navbarSupportedContent", "aria-controls", "navbarSupportedContent", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarSupportedContent", 1, "collapse", "navbar-collapse"], [1, "navbar-nav", "mr-auto", "pt-1"], [1, "nav-item"], ["href", "/encoding", 1, "nav-link"], ["href", "/decoding", 1, "nav-link"], ["href", "/selection", 1, "nav-link"], ["class", "nav-link", "href", "/passwordManager", 4, "ngIf"], [1, "navbar-nav", "my-2", "my-lg-0", "pt-1"], ["class", "nav-link", "href", "/login", 4, "ngIf"], ["class", "nav-link", "href", "/register", 4, "ngIf"], ["class", "nav-link", "href", "/register", 3, "click", 4, "ngIf"], ["href", "/passwordManager", 1, "nav-link"], ["href", "/login", 1, "nav-link"], ["href", "/register", 1, "nav-link"], ["href", "/register", 1, "nav-link", 3, "click"]],
       template: function NavbarComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
@@ -627,7 +722,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Encryption");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Encoding");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -637,7 +732,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Decryption");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Decoding");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1270,23 +1365,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/views/decryption/decryption.component.ts":
-  /*!**********************************************************!*\
-    !*** ./src/app/views/decryption/decryption.component.ts ***!
-    \**********************************************************/
+  "./src/app/views/decoding/decoding.component.ts":
+  /*!******************************************************!*\
+    !*** ./src/app/views/decoding/decoding.component.ts ***!
+    \******************************************************/
 
-  /*! exports provided: DecryptionComponent */
+  /*! exports provided: DecodingComponent */
 
   /***/
-  function srcAppViewsDecryptionDecryptionComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppViewsDecodingDecodingComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "DecryptionComponent", function () {
-      return DecryptionComponent;
+    __webpack_require__.d(__webpack_exports__, "DecodingComponent", function () {
+      return DecodingComponent;
     });
     /* harmony import */
 
@@ -1341,13 +1436,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
-    function DecryptionComponent_button_25_Template(rf, ctx) {
+    function DecodingComponent_button_25_Template(rf, ctx) {
       if (rf & 1) {
         var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DecryptionComponent_button_25_Template_button_click_0_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DecodingComponent_button_25_Template_button_click_0_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
 
           var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -1361,7 +1456,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function DecryptionComponent_button_26_Template(rf, ctx) {
+    function DecodingComponent_button_26_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 17);
 
@@ -1375,9 +1470,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    var DecryptionComponent = /*#__PURE__*/function () {
-      function DecryptionComponent(strEncryptionService, validateService, apiService, flashMessages, router) {
-        _classCallCheck(this, DecryptionComponent);
+    var DecodingComponent = /*#__PURE__*/function () {
+      function DecodingComponent(strEncryptionService, validateService, apiService, flashMessages, router) {
+        _classCallCheck(this, DecodingComponent);
 
         this.strEncryptionService = strEncryptionService;
         this.validateService = validateService;
@@ -1386,7 +1481,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.router = router;
       }
 
-      _createClass(DecryptionComponent, [{
+      _createClass(DecodingComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
           this.isDisabled = false;
@@ -1543,20 +1638,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }]);
 
-      return DecryptionComponent;
+      return DecodingComponent;
     }();
 
-    DecryptionComponent.ɵfac = function DecryptionComponent_Factory(t) {
-      return new (t || DecryptionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_str_encryption_service__WEBPACK_IMPORTED_MODULE_1__["StrEncryptionService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_validate_service__WEBPACK_IMPORTED_MODULE_2__["ValidateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_4__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]));
+    DecodingComponent.ɵfac = function DecodingComponent_Factory(t) {
+      return new (t || DecodingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_str_encryption_service__WEBPACK_IMPORTED_MODULE_1__["StrEncryptionService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_validate_service__WEBPACK_IMPORTED_MODULE_2__["ValidateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_service__WEBPACK_IMPORTED_MODULE_3__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_4__["FlashMessagesService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]));
     };
 
-    DecryptionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: DecryptionComponent,
-      selectors: [["app-decryption"]],
+    DecodingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: DecodingComponent,
+      selectors: [["app-decoding"]],
       decls: 29,
       vars: 5,
-      consts: [[1, "w3-display-container"], [1, "w3-padding-16", "w3-center"], [1, "w3-row-padding"], [1, "w3-panel", "w3-padding", "w3-border", "w3-round-xlarge"], [1, "w3-third", "w3-padding"], [1, "w3-padding", "w3-half"], ["type", "file", "id", "fileUpload", "name", "file", "accept", "image/*", 2, "display", "none"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "click"], [1, "w3-padding-16", "w3-half"], ["id", "lblUpload"], [1, "w3-padding"], ["src", "assets/images/placeholder.jpg", "alt", "Placeholder", "id", "selectedImage", 1, "w3-image"], [1, "w3-rest", "w3-padding"], ["type", "password", "placeholder", "Decryption key", "name", "decryptionKey", 1, "w3-input", "w3-border", "w3-round", 3, "ngModel", "ngModelChange"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "click", 4, "ngIf"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "disabled", 4, "ngIf"], ["placeholder", "Decrypted text", "rows", "8", "name", "decryptedText", 1, "w3-input", "w3-border", "w3-round", 3, "disabled", "ngModel", "ngModelChange"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "disabled"]],
-      template: function DecryptionComponent_Template(rf, ctx) {
+      consts: [[1, "w3-display-container"], [1, "w3-padding-16", "w3-center"], [1, "w3-row-padding"], [1, "w3-panel", "w3-padding", "w3-border", "w3-round-xlarge"], [1, "w3-third", "w3-padding"], [1, "w3-padding", "w3-half"], ["type", "file", "id", "fileUpload", "name", "file", "accept", "image/*", 2, "display", "none"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "click"], [1, "w3-padding-16", "w3-half"], ["id", "lblUpload"], [1, "w3-padding"], ["src", "assets/images/placeholder.jpg", "alt", "Placeholder", "id", "selectedImage", 1, "w3-image"], [1, "w3-rest", "w3-padding"], ["type", "password", "placeholder", "Decryption key", "name", "decryptionKey", 1, "w3-input", "w3-border", "w3-round", 3, "ngModel", "ngModelChange"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "click", 4, "ngIf"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "disabled", 4, "ngIf"], ["placeholder", "Decoded text", "rows", "8", "name", "decryptedText", 1, "w3-input", "w3-border", "w3-round", 3, "disabled", "ngModel", "ngModelChange"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "disabled"]],
+      template: function DecodingComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
@@ -1564,7 +1659,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h2");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Decrypt text");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Decode text");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1590,7 +1685,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DecryptionComponent_Template_button_click_11_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DecodingComponent_Template_button_click_11_listener() {
             return ctx.onClickBrowse();
           });
 
@@ -1624,7 +1719,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "input", 13);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function DecryptionComponent_Template_input_ngModelChange_20_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function DecodingComponent_Template_input_ngModelChange_20_listener($event) {
             return ctx.decryptionKey = $event;
           });
 
@@ -1636,11 +1731,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](22, "button", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DecryptionComponent_Template_button_click_22_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function DecodingComponent_Template_button_click_22_listener() {
             return ctx.onClickDecrypt();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Decrypt");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, "Decode");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1648,9 +1743,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, DecryptionComponent_button_25_Template, 2, 0, "button", 14);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](25, DecodingComponent_button_25_Template, 2, 0, "button", 14);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, DecryptionComponent_button_26_Template, 2, 1, "button", 15);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](26, DecodingComponent_button_26_Template, 2, 1, "button", 15);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1658,7 +1753,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "textarea", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function DecryptionComponent_Template_textarea_ngModelChange_28_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function DecodingComponent_Template_textarea_ngModelChange_28_listener($event) {
             return ctx.decryptedText = $event;
           });
 
@@ -1692,17 +1787,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2RlY3J5cHRpb24vZGVjcnlwdGlvbi5jb21wb25lbnQuY3NzIn0= */"]
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2RlY29kaW5nL2RlY29kaW5nLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DecryptionComponent, [{
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DecodingComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-decryption',
-          templateUrl: './decryption.component.html',
-          styleUrls: ['./decryption.component.css']
+          selector: 'app-decoding',
+          templateUrl: './decoding.component.html',
+          styleUrls: ['./decoding.component.css']
         }]
       }], function () {
         return [{
@@ -1723,23 +1818,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./src/app/views/encryption/encryption.component.ts":
-  /*!**********************************************************!*\
-    !*** ./src/app/views/encryption/encryption.component.ts ***!
-    \**********************************************************/
+  "./src/app/views/encoding/encoding.component.ts":
+  /*!******************************************************!*\
+    !*** ./src/app/views/encoding/encoding.component.ts ***!
+    \******************************************************/
 
-  /*! exports provided: EncryptionComponent */
+  /*! exports provided: EncodingComponent */
 
   /***/
-  function srcAppViewsEncryptionEncryptionComponentTs(module, __webpack_exports__, __webpack_require__) {
+  function srcAppViewsEncodingEncodingComponentTs(module, __webpack_exports__, __webpack_require__) {
     "use strict";
 
     __webpack_require__.r(__webpack_exports__);
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "EncryptionComponent", function () {
-      return EncryptionComponent;
+    __webpack_require__.d(__webpack_exports__, "EncodingComponent", function () {
+      return EncodingComponent;
     });
     /* harmony import */
 
@@ -1794,13 +1889,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
-    function EncryptionComponent_button_31_Template(rf, ctx) {
+    function EncodingComponent_button_31_Template(rf, ctx) {
       if (rf & 1) {
         var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 7);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EncryptionComponent_button_31_Template_button_click_0_listener() {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EncodingComponent_button_31_Template_button_click_0_listener() {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
 
           var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
@@ -1814,7 +1909,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    function EncryptionComponent_button_32_Template(rf, ctx) {
+    function EncodingComponent_button_32_Template(rf, ctx) {
       if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "button", 19);
 
@@ -1828,9 +1923,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
     }
 
-    var EncryptionComponent = /*#__PURE__*/function () {
-      function EncryptionComponent(strEncryptionService, validateService, sharingService, apiService, flashMessages) {
-        _classCallCheck(this, EncryptionComponent);
+    var EncodingComponent = /*#__PURE__*/function () {
+      function EncodingComponent(strEncryptionService, validateService, sharingService, apiService, flashMessages) {
+        _classCallCheck(this, EncodingComponent);
 
         this.strEncryptionService = strEncryptionService;
         this.validateService = validateService;
@@ -1839,7 +1934,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         this.flashMessages = flashMessages;
       }
 
-      _createClass(EncryptionComponent, [{
+      _createClass(EncodingComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
           var _this = this;
@@ -2079,20 +2174,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       }]);
 
-      return EncryptionComponent;
+      return EncodingComponent;
     }();
 
-    EncryptionComponent.ɵfac = function EncryptionComponent_Factory(t) {
-      return new (t || EncryptionComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_str_encryption_service__WEBPACK_IMPORTED_MODULE_1__["StrEncryptionService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_validate_service__WEBPACK_IMPORTED_MODULE_2__["ValidateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_sharing_service__WEBPACK_IMPORTED_MODULE_3__["SharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesService"]));
+    EncodingComponent.ɵfac = function EncodingComponent_Factory(t) {
+      return new (t || EncodingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_str_encryption_service__WEBPACK_IMPORTED_MODULE_1__["StrEncryptionService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_validate_service__WEBPACK_IMPORTED_MODULE_2__["ValidateService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_sharing_service__WEBPACK_IMPORTED_MODULE_3__["SharingService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_api_service__WEBPACK_IMPORTED_MODULE_4__["ApiService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesService"]));
     };
 
-    EncryptionComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
-      type: EncryptionComponent,
-      selectors: [["app-encryption"]],
+    EncodingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: EncodingComponent,
+      selectors: [["app-encoding"]],
       decls: 33,
       vars: 5,
-      consts: [[1, "w3-display-container"], [1, "w3-padding-16", "w3-center"], [1, "w3-row-padding"], [1, "w3-panel", "w3-padding", "w3-border", "w3-round-xlarge"], [1, "w3-third", "w3-padding"], [1, "w3-padding", "w3-half"], ["type", "file", "id", "fileUpload", "name", "file", "accept", "image/*", 2, "display", "none"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "click"], [1, "w3-padding-16", "w3-half"], ["id", "lblUpload"], [1, "w3-padding"], ["src", "assets/images/placeholder.jpg", "alt", "Placeholder", "id", "selectedImage", 1, "w3-image"], [1, "w3-padding", 3, "hidden"], ["src", "assets/images/placeholder.jpg", "alt", "Placeholder", "id", "resultImage", 1, "w3-image"], [1, "w3-rest", "w3-padding"], ["placeholder", "Text to encrypt", "rows", "8", "name", "textToEncrypt", 1, "w3-input", "w3-border", "w3-round", 3, "ngModel", "ngModelChange"], ["type", "password", "placeholder", "Encryption key", "name", "encryptionPassword", 1, "w3-input", "w3-border", "w3-round", 3, "ngModel", "ngModelChange"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "click", 4, "ngIf"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "disabled", 4, "ngIf"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "disabled"]],
-      template: function EncryptionComponent_Template(rf, ctx) {
+      consts: [[1, "w3-display-container"], [1, "w3-padding-16", "w3-center"], [1, "w3-row-padding"], [1, "w3-panel", "w3-padding", "w3-border", "w3-round-xlarge"], [1, "w3-third", "w3-padding"], [1, "w3-padding", "w3-half"], ["type", "file", "id", "fileUpload", "name", "file", "accept", "image/*", 2, "display", "none"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "click"], [1, "w3-padding-16", "w3-half"], ["id", "lblUpload"], [1, "w3-padding"], ["src", "assets/images/placeholder.jpg", "alt", "Placeholder", "id", "selectedImage", 1, "w3-image"], [1, "w3-padding", 3, "hidden"], ["src", "assets/images/placeholder.jpg", "alt", "Placeholder", "id", "resultImage", 1, "w3-image"], [1, "w3-rest", "w3-padding"], ["placeholder", "Text to encode", "rows", "8", "name", "textToEncrypt", 1, "w3-input", "w3-border", "w3-round", 3, "ngModel", "ngModelChange"], ["type", "password", "placeholder", "Encryption key", "name", "encryptionPassword", 1, "w3-input", "w3-border", "w3-round", 3, "ngModel", "ngModelChange"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "click", 4, "ngIf"], ["class", "w3-button w3-light-gray w3-ripple w3-round-xxlarge w3-cell-row", 3, "disabled", 4, "ngIf"], [1, "w3-button", "w3-light-gray", "w3-ripple", "w3-round-xxlarge", "w3-cell-row", 3, "disabled"]],
+      template: function EncodingComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
@@ -2100,7 +2195,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h2");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Encrypt text");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Encode text");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2126,7 +2221,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "button", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EncryptionComponent_Template_button_click_11_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EncodingComponent_Template_button_click_11_listener() {
             return ctx.onClickBrowse();
           });
 
@@ -2172,7 +2267,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "textarea", 15);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function EncryptionComponent_Template_textarea_ngModelChange_24_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function EncodingComponent_Template_textarea_ngModelChange_24_listener($event) {
             return ctx.textToEncrypt = $event;
           });
 
@@ -2184,7 +2279,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](26, "input", 16);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function EncryptionComponent_Template_input_ngModelChange_26_listener($event) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ngModelChange", function EncodingComponent_Template_input_ngModelChange_26_listener($event) {
             return ctx.encryptionPassword = $event;
           });
 
@@ -2196,11 +2291,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](28, "button", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EncryptionComponent_Template_button_click_28_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function EncodingComponent_Template_button_click_28_listener() {
             return ctx.onClickEncrypt();
           });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "Encrypt");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](29, "Encode");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2208,9 +2303,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "div", 4);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, EncryptionComponent_button_31_Template, 2, 0, "button", 17);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](31, EncodingComponent_button_31_Template, 2, 0, "button", 17);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](32, EncryptionComponent_button_32_Template, 2, 1, "button", 18);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](32, EncodingComponent_button_32_Template, 2, 1, "button", 18);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2244,17 +2339,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_6__["DefaultValueAccessor"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_6__["NgModel"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2VuY3J5cHRpb24vZW5jcnlwdGlvbi5jb21wb25lbnQuY3NzIn0= */"]
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZXdzL2VuY29kaW5nL2VuY29kaW5nLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
 
     (function () {
-      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](EncryptionComponent, [{
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](EncodingComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
-          selector: 'app-encryption',
-          templateUrl: './encryption.component.html',
-          styleUrls: ['./encryption.component.css']
+          selector: 'app-encoding',
+          templateUrl: './encoding.component.html',
+          styleUrls: ['./encoding.component.css']
         }]
       }], function () {
         return [{
@@ -2320,9 +2415,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: HomeComponent,
       selectors: [["app-home"]],
-      decls: 24,
+      decls: 15,
       vars: 0,
-      consts: [[1, "w3-display-container"], [1, "w3-padding-16", "w3-center"], [1, "w3-container", "w3-padding-large"], [1, "w3-panel", "w3-padding-large", "w3-border", "w3-round-xlarge"], ["href", "https://www.mongodb.com/cloud/atlas"], ["href", "https://picsum.photos/"], ["href", "https://github.com/brix/crypto-js"]],
+      consts: [[1, "w3-display-container"], [1, "w3-padding-16", "w3-center"], [1, "w3-container", "w3-padding-large"], [1, "w3-panel", "w3-padding-large", "w3-border", "w3-round-xlarge"]],
       template: function HomeComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -2343,13 +2438,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "About:");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](7, "About");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Steganographer is a web application built on a MEAN stack. The main purpose of this web application is to provide a secure steganographic functionality, which is implemented by encoding and decoding of encrypted text payload within a given image. The encryption of the payload is handled by Advanced Encryption Standard (AES) algorithm. Additionally, registered Users have an option to store their AES Encryption Keys in an online Password Manager.");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](9, "Steganography is an ancient practice of hiding secret data within other non-secret text or data. In order to provide fast and reliable use of steganography online, a web application called Steganographer was created. This web app can be used to encrypt and conceal a text message within a selected image, optionally allowing the user to save the encryption password in Password Manager.");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2359,37 +2454,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "h4");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Third party content:");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "How it works");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "p");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "This application is utilising a ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "a", 4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "MongoDB Atlas");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, " cloud database for User data storage and an external image API service called ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "a", 5);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Lorem Picsum");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, " for random stock images retrieval. The application is developed with help of Bootstrap and W3.CSS frameworks, text encryption is implemented using ");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](21, "a", 6);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](22, "CryptoJS");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](23, " library.");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "The encryption of a text message is handled by Advanced Encryption Standard (AES) algorithm, provided by CryptoJS library. The encrypted message is then encoded inside the selected image utilising a Least Significant Bit (LSB) replacement method. This method ensures safe, visually untraceable embedding of the text message within the image, allowing large amounts of data to be concealed. For example, an image sized at 1024 x 768 pixels can potentially store a text message 2359296 bits or 294912 symbols long (approximately 58982 words). Both encryption and encoding is performed solely on the client side, meaning that at no point a plaintext message, an encryption password or an image with a concealed message is transferred over the network.");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -3314,13 +3385,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         value: function ngOnInit() {
           //load images from Picsum API
           this.getImagesFromAPI();
-        } //get image src and pass to encryption component
+        } //get image src and pass to encoding component
 
       }, {
         key: "onClickGet",
         value: function onClickGet(src) {
           this.sharingService.setImageSrc(src);
-          this.router.navigate(['/encryption']);
+          this.router.navigate(['/encoding']);
         }
       }, {
         key: "getImagesFromAPI",
@@ -3471,7 +3542,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Click the image to select for encryption:");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Click the image to select for encoding:");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 

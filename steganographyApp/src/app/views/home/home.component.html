@@ -5,21 +5,22 @@
   </div>
   <div class="w3-container w3-padding-large">
     <div class="w3-panel w3-padding-large w3-border w3-round-xlarge">
-      <h4>About:</h4>
-      <p>Steganographer is a web application built on a MEAN stack. The
-        main purpose of this web application is to provide a secure steganographic
-        functionality, which is implemented by encoding and decoding of encrypted text
-        payload within a given image. The encryption of the payload is handled by
-        Advanced Encryption Standard (AES) algorithm. Additionally, registered Users have
-        an option to store their AES Encryption Keys in an online Password Manager.</p>
+      <h4>About</h4>
+      <p>Steganography is an ancient practice of hiding secret data within other non-secret text or data.
+        In order to provide fast and reliable use of steganography online, a web application called
+        Steganographer was created. This web app can be used to encrypt and conceal a text message within a selected image,
+        optionally allowing the user to save the encryption password in Password Manager.</p>
     </div>
     <div class="w3-panel w3-padding-large w3-border w3-round-xlarge">
-      <h4>Third party content:</h4>
-      <p>This application is utilising a <a href='https://www.mongodb.com/cloud/atlas'>MongoDB Atlas</a>
-        cloud database for User data storage
-        and an external image API service called <a href='https://picsum.photos/'>Lorem Picsum</a>
-        for random stock images retrieval. The application is developed with help of Bootstrap
-        and W3.CSS frameworks, text encryption is implemented using <a href='https://github.com/brix/crypto-js'>CryptoJS</a> library.</p>
+      <h4>How it works</h4>
+      <p>The encryption of a text message is handled by Advanced Encryption Standard (AES) algorithm,
+        provided by CryptoJS library. The encrypted message is then encoded inside the selected image
+        utilising a Least Significant Bit (LSB) replacement method. This method ensures safe, visually
+        untraceable embedding of the text message within the image, allowing large amounts of data to be
+        concealed. For example, an image sized at 1024 x 768 pixels can potentially store a text message
+        2359296 bits or 294912 symbols long (approximately 58982 words). Both encryption and encoding is
+        performed solely on the client side, meaning that at no point a plaintext message, an encryption password
+        or an image with a concealed message is transferred over the network.</p>
     </div>
   </div>
 </div>
