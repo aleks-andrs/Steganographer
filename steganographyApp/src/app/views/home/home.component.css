@@ -1,5 +1,5 @@
 .w3-container{
-  width: 800px;
+  max-width: 800px;
   margin: auto;
   text-align: justify;
   text-justify: inter-word;
