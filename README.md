@@ -1,6 +1,6 @@
 # STEGANOGRAPHER
 
-Steganographer is a web application that provides fast and reliable use of steganography online. The web app is hosted on [GitHub Pages](https://aleks-andrs.github.io/steganographer/) and [Heroku](https://steganographer.herokuapp.com/home) server.
+Steganographer is a web application that provides fast and reliable use of steganography online. The web app is hosted on [Heroku](https://steganographer.herokuapp.com/home) server.
 
 ## Technical details
 
